@@ -1,0 +1,11 @@
+[
+  {
+    "title": "Playstation 5",
+    "description": "Best console of the market",
+    "price": 299,
+    "thumbnail": "https://hips.hearstapps.com/hmg-prod/images/ps5-sony-consola-1600378972.jpg?crop=0.75993091537133xw:1xh;center,top&resize=1200:*",
+    "code": "ps501",
+    "stock": 10,
+    "id": 2
+  }
+]

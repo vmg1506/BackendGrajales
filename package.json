@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "dependencies": {
+        "js": "^0.1.0"
+    }
+}
