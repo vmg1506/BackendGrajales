@@ -129,11 +129,21 @@ const product2 = {
     stock: 5
 };
 
+const product3 = {
+    title: 'Xbox Series x',
+    description: 'Most powerful xbox ever',
+    price: 499,
+    thumbnail: 'https://assets.xboxservices.com/assets/f1/68/f1680ea5-9e4b-4381-b684-4fe2bbfd1773.jpg?n=Hogwarts-Legacy_Feature-Background-0_XSX_767x628.jpg',
+    code: 'xbx01',
+    stock: 5
+}
+
 const manager = new ProductManager('./products.json');
 
 async function test () {
     console.log(await manager.addProduct(product1));
     console.log(await manager.addProduct(product2));
+    console.log(await manager.addProduct(product3));
     console.log(await manager.getProducts());
     console.log(await manager.getProductById(1));
     console.log(await manager.updateProduct(2,
@@ -142,7 +152,15 @@ async function test () {
             price: 299
         }
     ));
-    console.log(await manager.deleteProductById(1));
+    console.log(await manager.updateProduct(4, 
+        {
+            code: 'xbx02',
+            stock: 4
+        }
+        ));
+
+    console.log(await manager.getProducts());
+    console.log(await manager.deleteProductById(5));
     
 
 }
