@@ -1,6 +1,17 @@
 {
-    "type": "module",
-    "dependencies": {
-        "js": "^0.1.0"
-    }
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.2",
+    "js": "^0.1.0"
+  },
+  "name": "entregables",
+  "version": "1.0.0",
+  "main": "productManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

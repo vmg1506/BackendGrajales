@@ -1,5 +1,7 @@
 
-import { promises as fs } from "fs"
+const fs = require('fs')
+
+const fsPromises = require('fs/promises')
 
 class ProductManager {
     constructor(path) {
@@ -28,7 +30,7 @@ class ProductManager {
 
     writeFile = async data => {
         try {
-            await fs.writeFile(this.path, JSON.stringify(data, null, 2));
+            await fsPromises.writeFile(this.path, JSON.stringify(data, null, 2));
         } catch (error) {
             console.log(error);
         }
@@ -57,7 +59,7 @@ class ProductManager {
 
     getProducts = async() => {
         try {
-            const products = await fs.readFile(this.path, 'utf-8');
+            const products = await fsPromises.readFile(this.path, 'utf-8');
             return JSON.parse(products);
         } catch (error) {
             if(error.message.includes('no such file or directory')) return [];
@@ -165,4 +167,6 @@ async function test () {
 
 }
 
-test();
+module.exports =  ProductManager;
+
+
