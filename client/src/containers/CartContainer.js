@@ -6,9 +6,12 @@ import { useParams } from "react-router";
 const CartContainer = () => {
     const {cid} = useParams()
     const [cartData, setCartData] = useState(null);
+    
+    const PORT = 3000;
+
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/carts/${cid}`)
+        axios.get(`http://localhost:${PORT}/api/carts/${cid}`)
             .then(response => {
                 setCartData(response.data.payload);
             })
