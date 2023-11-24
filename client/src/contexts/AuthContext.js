@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const cookieJar = new tough.CookieJar();
   const axiosInstance = axios.create({
     withCredentials: true,
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'http://localhost:8080/',
     jar: cookieJar,
   });
 
@@ -36,8 +36,10 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axiosInstance.post('/api/sessions/login', { email, password });
 
+      console.log(response.data)
       if (response.status === 200) {
-        setUser(response.data.payload.user);
+        
+        setUser(response.data.payload);
       }
     } catch (error) {
       console.error('Error de inicio de sesión:', error);

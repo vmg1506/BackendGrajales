@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../contexts/AuthContext.js";
+import { AuthContext } from "../contexts/AuthContext";
 
 const LoginForm = () => {
     const { login } = useContext(AuthContext);
@@ -11,12 +11,17 @@ const LoginForm = () => {
       login(email, password);
     };
 
+    const handleGitHubLogin = async (e) => {
+      e.preventDefault();
+      window.location.href = 'http://localhost:8080/api/sessions/github';
+    }
+
     return <>
       <h1>Login</h1>
       <div>
         <form onSubmit={handleLogin}>
           <label>
-          Email::
+          Correo Electrónico:
             <input
               type="email"
               value={email}
@@ -24,17 +29,18 @@ const LoginForm = () => {
             />
           </label>
           <label>
-            Password:
+            Contraseña:
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <button type="submit">Login</button>
+          <button type="submit">Iniciar Sesión</button>
         </form>
       </div>
-      <p>Do you already have an account?, <a href="/register">Click Here</a></p>
+      <button onClick={handleGitHubLogin}>Logueate con github</button>
+      <p>No tienes una cuenta?, <a href="/register">click aqui</a></p>
     </>
 }
 
