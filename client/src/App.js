@@ -1,5 +1,5 @@
-import { AuthProvider } from "./contexts/AuthContext.js";
-import Router from "./router/Router.js";
+import { AuthProvider } from "./contexts/AuthContext.jsx";
+import Router from "./router/Router.jsx";
 import "./sass/import.scss";
 
 function App() {

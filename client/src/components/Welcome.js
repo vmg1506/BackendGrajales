@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext.js";
+import { AuthContext } from "../contexts/AuthContext.jsx";
 
 const Welcome = ({ user }) => {
   const { logout } = useContext(AuthContext);
@@ -11,8 +11,12 @@ const Welcome = ({ user }) => {
 
   return (
     <div className="welcome-products-user">
-      <h2>Welcome {user?.name}</h2>
-      <button onClick={handleLogout}>Logout</button>
+      <h2>Bienvenido {user?.name}</h2>
+      <div>
+        {user?.admin ? <button>Admin Menu</button> : null}
+        <button>Ver Perfil</button>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   );
 };
